@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>gregslist-mvc</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar d-flex flex-row navbar-light navbar-expand bg-primary text-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                <span class="ml-2">Gregslist</span>
+            </a>
+            <!-- form -->
+            <!-- The action attribute defines the location (URL) where the form's collected data should be sent when it is submitted. -->
+            <form action="" onsubmit="event.preventDefault()" id="pageSelect"></form>
+            <div class="px-4">
+                <label for="City">City:</label>
+                <select name="City" id="City">
+                    <option value="Boise">Boise</option>
+                </select>
+            </div>
+            <div class="px-4">
+                <!-- main drop down -->
+                <label for="category">Category:</label>
+                <select name="category" id="category" form="pageSelect">
+                    <option value="Cars">Cars</option>
+                    <option value="Jobs">Jobs</option>
+                    <option value="Houses">Houses</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col mt-5">
+                <form class="d-flex" onsubmit="app.carsController.createCar()">
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <input type="text" name="make" id="make" class="form-control" placeholder="Make..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" name="model" id="model" class="form-control" placeholder="Model..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" name="year" id="year" class="form-control" placeholder="Year..." required
+                            min="1950" max="2021">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
+                            required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">Image Url</label>
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="cars">
+            <!-- <div class="col-md-3 col-sm-2 my-3">
+                <div class="car bg-light shadow">
+                    <img src="//placehold.it/200x200" class="w-100" alt="car">
+                    <div class="p-3">
+                        <div class="text-center">
+                            <p><b>YEAR - MAKE - MODEL</b></p>
+                        </div>
+                        <p>DESCRIPTION</p>
+                        <p><em>PRICE</em></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <footer class="bg-dark text-light">
+        <div class="text-center">
+            <p><small>Made with love by Codeworks and Jaron</small></p>
+        </div>
+    </footer>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
