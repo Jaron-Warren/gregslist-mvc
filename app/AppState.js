@@ -6,6 +6,8 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
 
+  currentview = 'cars'
+
   /** @type {Car[]} */
   cars = [
     new Car({
